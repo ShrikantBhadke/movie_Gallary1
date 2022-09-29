@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Gallary</title>
+    <script
+      src="https://kit.fontawesome.com/5d62a029bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="bg-primary p-4">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <h3 class="text-white">Movie Gallary</h3>
+          </div>
+          <div class="col-6 text-right">
+            <button class="btn btn-success" id="add_movies">Add Movie</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="backDrop d-none" id="backDrop"></div>
+    <div class="myModal d-none p-5" id="myModal">
+      <div class="myModal-content">
+        <h3>Add Movie Info <i class="fa-solid myClose fa-xmark"></i></h3>
+        <form id="formSubmit">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control title"
+              placeholder="Title"
+              id="title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="imgUrl">Image Url</label>
+            <input
+              type="text"
+              id="imgUrl"
+              placeholder="imgUrl"
+              class="form-control imgUrl"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating</label>
+            <input
+              type="number"
+              id="rating"
+              placeholder="Rating"
+              class="form-control rating"
+              required
+            />
+          </div>
+          <div class="form-group text-right">
+            <button class="btn btn-info" type="submit" id="add_Movies">
+              Add Movies
+            </button>
+            <button class="btn myClose btn-danger" type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" id="thumbnail">
+        <!-- <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <figure>
+                    <h3>Title</h3>
+                    <img src="" alt="" title="" class="img-fluid">
+                    <figcaption>
+                      <p>5/5</p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div> -->
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
