@@ -45,8 +45,10 @@ function creatcard(Arry) {
     <div class="card">
       <div class="card-body">
         <figure>
-          <h3>${ele.title}</h3>
-          <img src="${ele.imgUrl}" alt="${ele.title}" title="${ele.title}" class="cardImg">
+          <h3>${ele.title.toUpperCase()}</h3>
+          <img src="${ele.imgUrl}" alt="${ele.title}" title="${
+      ele.title
+    }" class="cardImg">
           <figcaption>
             <p>
             ${ele.rating}/5
