@@ -1,4 +1,3 @@
-
 // ---------------DOM Selectors--------------------
 
 const add_moviesBtn = document.getElementById("add_movies");
@@ -12,44 +11,42 @@ const thumbnailDiv = document.getElementById("thumbnail");
 const formSubmitForm = document.getElementById("formSubmit");
 let movieArry = [];
 
-
 // -----------------------CallBack Function--------------------
 
-const addMovies = (event) =>{
-backDropDiv.classList.remove("d-none");
-myModalDiv.classList.remove("d-none");
-}
-const hideModal = (event) =>{
-backDropDiv.classList.add("d-none");
-myModalDiv.classList.add("d-none");
-}
+const addMovies = (event) => {
+  backDropDiv.classList.remove("d-none");
+  myModalDiv.classList.remove("d-none");
+};
+const hideModal = (event) => {
+  backDropDiv.classList.add("d-none");
+  myModalDiv.classList.add("d-none");
+};
 
-const CreatCatd = function(ele){
-    ele.preventDefault();
-// console.log(ele.target);
-let obj = {
-    title : input_text.value,
-    imgUrl : input_imgUrl.value,
-    rating : input_rating.value
-}
+const CreatCatd = function (ele) {
+  ele.preventDefault();
+  // console.log(ele.target);
+  let obj = {
+    title: input_text.value,
+    imgUrl: input_imgUrl.value,
+    rating: input_rating.value,
+  };
 
+  movieArry.push(obj);
+  // console.log(movieArry);
+  creatcard(movieArry);
+  this.reset();
+  hideModal();
+};
 
-movieArry.push(obj);
-// console.log(movieArry);
-creatcard(movieArry);
-this.reset();
-hideModal();
-}
-
-function creatcard(Arry){
-    let result = "";
-Arry.forEach(function(ele){
+function creatcard(Arry) {
+  let result = "";
+  Arry.forEach(function (ele) {
     result += `<div class="col-md-4 mt-5">
     <div class="card">
       <div class="card-body">
         <figure>
           <h3>${ele.title}</h3>
-          <img src="${ele.imgUrl}" alt="${ele.title}" title="${ele.title}" class="img-fluid img-thumbnail">
+          <img src="${ele.imgUrl}" alt="${ele.title}" title="${ele.title}" class="cardImg">
           <figcaption>
             <p>
             ${ele.rating}/5
@@ -58,19 +55,17 @@ Arry.forEach(function(ele){
         </figure>
       </div>
     </div>
-            </div>`
-  thumbnailDiv.innerHTML = result;
-})
-
+            </div>`;
+    thumbnailDiv.innerHTML = result;
+  });
 }
 // --------------------------Event Binding-------------------
 
-add_moviesBtn.addEventListener("click",addMovies);
-myClose.forEach(function(ele){
-    ele.addEventListener("click",hideModal);
-})
+add_moviesBtn.addEventListener("click", addMovies);
+myClose.forEach(function (ele) {
+  ele.addEventListener("click", hideModal);
+});
 
-backDropDiv.addEventListener("click",hideModal);
+backDropDiv.addEventListener("click", hideModal);
 
 formSubmitForm.addEventListener("submit", CreatCatd);
-

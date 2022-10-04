@@ -31,7 +31,12 @@ input::-webkit-inner-spin-button {
     float: right;
     cursor:pointer;
 }
-
+.cardImg{
+    height:280px;
+    object-fit: cover;
+    width: 100%;
+    /* object-fit: contain; */
+}
 @keyframes mymoduledown{
     from{
         transform: translateY(-5rem);
