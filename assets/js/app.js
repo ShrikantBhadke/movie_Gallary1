@@ -49,7 +49,7 @@ Arry.forEach(function(ele){
       <div class="card-body">
         <figure>
           <h3>${ele.title}</h3>
-          <img src="${ele.imgUrl}">
+          <img src="${ele.imgUrl}" alt="${ele.title}" title="${ele.title}" class="img-fluid img-thumbnail">
           <figcaption>
             <p>
             ${ele.rating}/5

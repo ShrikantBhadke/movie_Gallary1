@@ -15,16 +15,41 @@ input::-webkit-inner-spin-button {
     left: 0;
     width: 100%;
     height: 100vh;
+    animation: backdivdown .3s ease-in-out;
 }
 .myModal{
-    width: 40%;
+    width: 60%;
     position:fixed;
-    left : 30%;
+    left : 20%;
+    top: 25%;
     background-color: #ffffff;
     border-radius: 5px;
     z-index: 1;
+    animation: mymoduledown .5s ease-in-out;
 }
 .myModal h3 i {
     float: right;
     cursor:pointer;
+}
+
+@keyframes mymoduledown{
+    from{
+        transform: translateY(-5rem);
+        opacity: 0;
+    }
+    to{
+        trnasform:translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes backdivdown{
+    from{
+        transform:translateY(-5rem);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
 }
